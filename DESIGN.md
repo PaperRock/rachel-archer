@@ -1,0 +1,71 @@
+# Design — Rachel Archer Counselling
+
+<!-- impeccable:design-system 1 -->
+
+## World
+
+**Calm, warm, editorial — with a hot-pink highlight.** A rebuild (not a Wix port) of the incumbent therapy site, committed to putting an anxious visitor at ease first. The visual voice is a warm, bookish editorial practice — human, honest, generous — in deliberate contrast to clinical or corporate therapy templates. The direction was pinned by the brief (the user chose it); no concept roll. The palette follows the reference scheme the user specified (receivio.framer.media): warm cream ground, near-black ink, a single hot-pink highlight colour used as a marker behind the hero accent word, and an electric-blue link/focus tone.
+
+## Tokens
+
+### Palette
+| Token | Value | Role |
+|---|---|---|
+| `--paper` | `#f6f0e2` | warm cream ground |
+| `--paper-deep` | `#ede8d6` | alternating section band |
+| `--surface` | `#ffffff` | cards, panels, inputs |
+| `--ink` | `#141414` | near-black text + primary buttons + dark panels |
+| `--ink-soft` | `#484848` | secondary text (≈8:1 on paper) |
+| `--accent` | `#ffb4f9` | hot-pink highlight — marks, hero `<em>` marker, hover fills |
+| `--accent-deep` | `#0217fe` | electric-blue links, focus rings (≈7.2:1 on paper) |
+| `--clay` | `#fd5622` | warm note, used only in tiny marks |
+| `--line` | `rgba(20,20,20,0.12)` | hairlines |
+| `--line-strong` | `rgba(20,20,20,0.22)` | decorative borders (content chips) |
+| `--control-border` | `#6f695e` | input/radio/toggle borders (≥5.4:1) |
+| `--on-dark-text` | `rgba(255,255,255,0.66)` | secondary text on ink (≈8.2:1) |
+| `--on-dark-muted` | `rgba(255,255,255,0.5)` | labels and notes on ink |
+| `--on-dark-link` | `rgba(255,255,255,0.85)` | links on ink |
+| `--on-dark-line` | `rgba(255,255,255,0.14)` | hairlines on ink |
+| `--on-dark-line-strong` | `rgba(255,255,255,0.4)` | ghost-button borders on ink |
+
+### Type
+- Display: **Alegreya** (500, 700, 700 italic), self-hosted via `@fontsource`. Serif display with an italic accent word in the hero.
+- Body/UI: **Karla** (400, 500, 700), self-hosted.
+- Scale: `h1` `clamp(2.5rem, 5.5vw, 4.25rem)`, `h2` `clamp(1.9rem, 3.6vw, 2.9rem)`, `h3` `clamp(1.3rem, 2vw, 1.65rem)`. Body 17px/1.7, prose measure 68ch. `text-wrap: balance` on headings; tracking floor −0.01em.
+
+### Shape & depth
+- Radii: `10 / 16 / 24px`. Photos and panels get the large radius.
+- Shadows carry offset + blur: `--shadow-soft` (0 26px 60px −28px), `--shadow-card` (0 18px 44px −26px). No hard offset blocks.
+
+### Motion
+One authored moment: a soft page crossfade via Astro View Transitions, with header/footer persisted. Plus gentle hover lifts on buttons, a slow image scale on the hero photo, and underline reveals in the nav. Everything honors `prefers-reduced-motion`.
+
+## Layout
+
+- Max width `1140px`, gutter `clamp(1.25rem, 4vw, 2.5rem)`, section rhythm `clamp(4.5rem, 10vw, 8rem)`.
+- `.split` two-column for interior prose pages (photo/heading left, prose right); collapses below 820px. Sticky photo rail on Approach.
+- Hero: two-column grid (copy left, portrait right with a location tag); single column on mobile, photo below copy.
+- Editorial rhythm: generous whitespace, more space above a heading than below; prose sections over icon-card grids.
+
+## Components
+
+- **Header**: sticky, translucent paper with backdrop blur; serif wordmark + tracked sub-line; desktop underline nav; pill CTA "Let's talk about it"; mobile hamburger → full-height menu under the header bar with big serif links, contact block, scroll lock.
+- **Footer**: espresso band; brand + practice/contact/professional columns; social round icons; BACP badge linking out; dynamic copyright year.
+- **Buttons**: pill; primary near-black, ghost with control-border, on-dark variants; hot-pink hover fill with ink text; 1px lift on hover.
+- **CTA band**: near-black rounded panel, heading + reassurance line, contact actions.
+- **Issues chips**: surface pills enumerating presenting issues (content, non-interactive).
+- **FAQ**: surface panels, one open question + an invitation to ask more.
+- **Fee panel**: big serif fee, reduced-fee note, contact details, BACP badge.
+- **Contact form**: native validation (no `novalidate`), custom radios, mailto delivery that opens the visitor's email app, then shows the incumbent success message ("Thanks for reaching out. I will get back to you within 48 hours.").
+
+## Trust markers (non-negotiable)
+
+BACP registration, BACP Ethical Framework, five years' experience, ongoing training, phone 07915 101 997, email rachelarchertherapy@gmail.com, Cave Hill Maidstone ME15 6DX, £55/hour, reduced fee (students / low-income / NHS staff), 48-hour reply promise.
+
+## Accessibility
+
+High bar per PRODUCT.md: the audience lives with anxiety and panic attacks, so the surface is calm and low-friction. Skip link, semantic landmarks (`main`, `nav` for desktop and mobile), visible focus rings (≥3:1), control borders ≥3:1, text contrast ≥4.5:1, `prefers-reduced-motion` honored, no autoplay or flashing. Three FAQ answers beyond the fee item are intentionally omitted because they were client-rendered and unrecoverable from the incumbent site — the section ships the fee Q/A plus an invitation to ask.
+
+## Delivery
+
+Static Astro 5 build, output `static`, site `https://www.rachelarcher.com`. Run `npm run dev` to develop; `npm run build` to ship; `npx astro check` for type/lint.
