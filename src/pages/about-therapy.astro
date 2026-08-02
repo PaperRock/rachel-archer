@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+	title="About Professional Counselling"
+	description="A warm, individual counselling service in Maidstone. Rachel Archer is a BACP-registered integrative and humanistic counsellor, IFS-informed, with five years' experience."
+>
+	<section class="page-hero">
+		<div class="container">
+			<h1>About Professional Counselling</h1>
+			<p class="lead page-lead">
+				A truly individual service, built around the needs of each person who comes
+				to see me.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="split">
+				<div>
+					<h2 style="margin-bottom: 1.4rem">The practice</h2>
+					<div class="prose">
+						<p>
+							I have a lot of experience, with five years as a counsellor. My manner
+							is warm and professional, and I will build therapy around the
+							particular needs of each person who comes to see me. I draw on all my
+							training and expertise in several therapeutic models to ensure I offer
+							a truly individual service.
+						</p>
+						<p>
+							I have completed in-depth training in humanistic and integrative
+							therapy and attend regular training. I am an IFS-informed therapist who
+							uses parts work to help understand more of our internal system.
+						</p>
+					</div>
+					<div class="trust-row">
+						<span>{site.bacp.label}.</span>
+						<span>{site.bacp.framework}</span>
+					</div>
+				</div>
+
+				<figure class="figure">
+					<img
+						src="/images/practice-room.jpg"
+						alt="The counselling practice at Cave Hill, Maidstone"
+						width="1200"
+						height="900"
+						loading="lazy"
+					/>
+					<figcaption>{site.addressLine}</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section-alt">
+		<div class="container">
+			<h2 style="margin-bottom: 0.6rem">Frequently Asked Questions</h2>
+			<p class="text-soft" style="max-width: 58ch; margin-bottom: 2.25rem">
+				I&rsquo;ve compiled a list of questions you might have about me and my
+				sessions. If you think of any more, please let me know.
+			</p>
+
+			<div class="faq">
+				<article class="faq-item">
+					<h3>What is the initial cost for a consultation?</h3>
+					<p>
+						My fee is <span class="faq-highlight">{site.fee} {site.feeDetail}</span>.
+					</p>
+					<p style="margin-top: 0.9rem">{site.feeNote}</p>
+				</article>
+
+				<article class="faq-item">
+					<h3>Have another question?</h3>
+					<p>
+						Choosing a counsellor can feel daunting &mdash; that&rsquo;s normal. Ask
+						me anything by phone or email, and I&rsquo;ll reply within 48 hours.
+					</p>
+					<p style="margin-top: 1rem">
+						<a class="text-link" href="/contact">
+							Ask me a question <span class="arrow" aria-hidden="true">&rarr;</span>
+						</a>
+					</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<ContactBand />
+</BaseLayout>

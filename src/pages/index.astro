@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout title="Counselling in Maidstone — In-Person and Online Video Counselling">
+	<section class="hero">
+		<div class="container">
+			<div class="hero-grid">
+				<div class="hero-content">
+					<h1>
+						<span class="em">Counselling</span> in Maidstone
+					</h1>
+					<p class="hero-sub">{site.subtagline}</p>
+
+					<p class="hero-intro">
+						I appreciate how daunting it is to take the first step and share your
+						feelings of anxiety or depression. My clients often express relief from
+						being able to discuss their grief, anger, or shame.
+					</p>
+
+					<div class="hero-actions">
+						<a class="btn btn-primary" href="/contact">Let&rsquo;s talk about it</a>
+						<a class="btn btn-ghost" href={`tel:${site.phoneTel}`}>
+							Call {site.phoneDisplay}
+						</a>
+					</div>
+
+					<p class="hero-trust">
+						<span>{site.bacp.label}</span>
+						<span class="dot" aria-hidden="true">&bull;</span>
+						<span>Humanistic &amp; integrative</span>
+						<span class="dot" aria-hidden="true">&bull;</span>
+						<span>IFS-informed</span>
+					</p>
+				</div>
+
+				<div class="hero-media">
+					<div class="frame">
+						<img
+							src="/images/rachel-archer.jpg"
+							alt="Rachel Archer, counsellor in Maidstone"
+							width="1000"
+							height="1500"
+							fetchpriority="high"
+						/>
+					</div>
+					<span class="hero-loc">
+						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+							<path
+								d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z"
+								stroke="currentColor"
+								stroke-width="1.7"
+							/>
+							<circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.7" />
+						</svg>
+						{site.addressLine}
+					</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="split">
+				<div>
+					<span class="divider-seed" aria-hidden="true">
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+							<path d="M12 2.5c5 3.2 7.5 7.4 7.5 12.6a7.5 7.5 0 0 1-15 0C4.5 9.9 7 5.7 12 2.5Z" fill="currentColor" />
+						</svg>
+					</span>
+					<p class="lead">
+						&ldquo;Establishing a genuine connection is at the heart of my
+						counselling practice, helping my clients to feel at ease to share what
+						is troubling them &mdash; face to face or online.&rdquo;
+					</p>
+				</div>
+				<div>
+					<p>
+						Many people reach a point in their lives where old habits of managing
+						thoughts and feelings no longer work. We are mistakenly led to believe
+						that a frenzy of activity will quiet our unrest. Beneath it lies a range
+						of psychological challenges that counselling can help with.
+					</p>
+					<ul class="issues" aria-label="Issues I can help with">
+						<li>Depression</li>
+						<li>Overwhelming stress</li>
+						<li>Anxiety</li>
+						<li>Panic attacks</li>
+						<li>Perfectionism</li>
+						<li>Addictions</li>
+						<li>Grief, anger &amp; shame</li>
+						<li>Relationship problems</li>
+					</ul>
+					<p style="margin-top: 1.75rem">
+						Suppressing emotions simply makes life more difficult and hinders our
+						relationships. Talking it through &mdash; with someone who listens
+						without judgement &mdash; can change that.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section-alt">
+		<div class="container">
+			<h2 style="max-width: 22ch; margin-bottom: 1.2rem">Two ways to work together</h2>
+			<p class="text-soft" style="max-width: 52ch; margin-bottom: 2.5rem">
+				Counselling happens in person at my practice in Maidstone, or online wherever
+				you are. Both are built around you.
+			</p>
+
+			<div class="paths">
+				<article class="path">
+					<h3>Counselling in Maidstone</h3>
+					<p>
+						A calm, safe space at Cave Hill, Maidstone where we meet face to face for
+						an hour each week, working at your pace.
+					</p>
+					<a class="text-link" href="/about-therapy">
+						About counselling <span class="arrow" aria-hidden="true">&rarr;</span>
+					</a>
+				</article>
+
+				<article class="path">
+					<h3>Online video &amp; phone counselling</h3>
+					<p>
+						From the comfort of your own home, over the phone, Skype, FaceTime or
+						WhatsApp &mdash; for anyone who can&rsquo;t get to Maidstone.
+					</p>
+					<a class="text-link" href="/online-counselling">
+						Online counselling <span class="arrow" aria-hidden="true">&rarr;</span>
+					</a>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<ContactBand
+		heading="Let&rsquo;s talk about it"
+		sub="The first step can feel like the hardest. I&rsquo;m here to make it easier &mdash; " +
+			site.replyPromise
+	/>
+</BaseLayout>

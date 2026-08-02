@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+	title="Contact"
+	description="Get in touch with Rachel Archer Counselling in Maidstone. Fill out the form and I'll be in touch within 48 hours. Sessions are £55 per hour."
+>
+	<section class="page-hero">
+		<div class="container">
+			<h1>Contact</h1>
+			<p class="lead page-lead">
+				If you want to talk about anything listed on this website, or you&rsquo;re
+				interested in setting up an appointment or how I can help you &mdash; I&rsquo;d
+				love to hear from you.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="split">
+				<div>
+					<h2 style="margin-bottom: 0.75rem">Send me a message</h2>
+					<p class="text-soft" style="max-width: 50ch; margin-bottom: 2rem">
+						Fill out the form and I will be in touch within 48 hours. My practice is
+						located in Maidstone or online, and I provide counselling to adults.
+					</p>
+					<ContactForm />
+				</div>
+
+				<aside class="fee-panel">
+					<h2 style="font-size: 1.6rem; margin-bottom: 1.1rem">Fees</h2>
+					<div class="fee">
+						<span class="fee-num">{site.fee}</span>
+						<span class="fee-unit">{site.feeDetail}</span>
+					</div>
+					<p style="margin-top: 1rem">{site.feeNote}</p>
+
+					<hr />
+
+					<ul class="detail-list">
+						<li>
+							<span class="mark" aria-hidden="true">&bull;</span>
+							<span><strong>Where</strong> &mdash; {site.addressLine}</span>
+						</li>
+						<li>
+							<span class="mark" aria-hidden="true">&bull;</span>
+							<span><strong>Phone</strong> &mdash; <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a></span>
+						</li>
+						<li>
+							<span class="mark" aria-hidden="true">&bull;</span>
+							<span><strong>Email</strong> &mdash; <a href={`mailto:${site.email}`}>{site.email}</a></span>
+						</li>
+					</ul>
+
+					<hr />
+
+					<p style="font-size: 0.95rem">
+						{site.bacp.label}. {site.bacp.framework}
+					</p>
+					<div class="trust-row">
+						<a class="bacp-mark" href={site.bacp.url} target="_blank" rel="noopener" aria-label="Visit the BACP website">
+							<img src="/images/bacp-logo.png" alt="BACP — British Association for Counselling and Psychotherapy" width="208" height="92" />
+						</a>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

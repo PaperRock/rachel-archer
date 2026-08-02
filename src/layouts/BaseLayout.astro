@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = site.description } = Astro.props;
+
+const fullTitle = title.includes("Rachel Archer")
+	? title
+	: `${title} | Rachel Archer Counselling`;
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
+---
+
+<!doctype html>
+<html lang="en-GB">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<title>{fullTitle}</title>
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#f6f0e2" />
+		<link rel="canonical" href={pageUrl} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={site.name} />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={pageUrl} />
+		<meta name="twitter:card" content="summary" />
+	</head>
+	<body>
+		<!--
+			THESIS: A warm, human counselling practice for anxious visitors deciding whether to reach out. Calm first, persuasion second; refuses the clinical template and the templated therapy-theme (cream + serif + terracotta) by committing to a warm-cream editorial world with a hot-pink highlight.
+			OWN-WORLD: warm cream paper (#f6f0e2) with near-black ink (#141414); hot-pink highlight (#ffb4f9) with electric-blue links and focus rings (#0217fe); clay orange appears only in the smallest marks. Alegreya serif for display, Karla for body; generous whitespace, 68ch prose, rounded frames and panels, one gentle entrance and soft page fades.
+			STORY: The visitor is met with a human face and honest words, understands Rachel is BACP-registered, warm and individual, and knows the exact, easy ways to make first contact within 48 hours.
+			FIRST VIEWPORT: two-column hero. Left: serif "Counselling in Maidstone" with an italic accent, a small tracked sub-line, a reassuring intro, "Let's talk about it" plus a call action, and a quiet BACP trust line. Right: Rachel's portrait in a rounded frame with a location tag.
+			FORM: user-pinned "calm, warm, editorial" direction; no concept roll (brief-pinned per new-work).
+			FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+		-->
+		<a class="skip-link" href="#main">Skip to content</a>
+		<Header />
+
+		<main id="main">
+			<slot />
+		</main>
+
+		<Footer />
+
+		<script>
+			import "astro:transitions/client";
+		</script>
+	<!-- impeccable-live-start -->
+<script is:inline src="http://localhost:8400/live.js?token=640c4cfe-1efe-4f8f-90a0-bd93ba9db8f9"></script>
+<!-- impeccable-live-end -->
+</body>
+</html>

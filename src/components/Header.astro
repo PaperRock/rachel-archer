@@ -1,0 +1,88 @@
+---
+import { nav, site } from "../data/site";
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+	href === "/"
+		? pathname === "/"
+		: pathname === href || pathname.startsWith(href + "/");
+---
+
+<header class="site-header" transition:persist>
+	<div class="header-inner">
+		<a class="wordmark" href="/" aria-label="Rachel Archer Counselling — home">
+			<span class="wordmark-name">Rachel Archer</span>
+			<span class="wordmark-sub">Counselling in Maidstone</span>
+		</a>
+
+		<nav class="nav" aria-label="Main">
+			{
+				nav.map((item) => (
+					<a href={item.href} class={isActive(item.href) ? "is-active" : undefined}>
+						{item.label}
+					</a>
+				))
+			}
+		</nav>
+
+		<a class="btn btn-primary header-cta" href="/contact">Let&rsquo;s talk about it</a>
+
+		<button
+			class="nav-toggle"
+			type="button"
+			aria-label="Open menu"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
+			data-nav-toggle
+		>
+			<svg class="icon-open" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+				<path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+			</svg>
+			<svg class="icon-close" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+				<path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+			</svg>
+		</button>
+	</div>
+
+	<div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+		<nav class="mobile-menu__inner" aria-label="Main">
+			{
+				nav.map((item) => (
+					<a class={"menu-link" + (isActive(item.href) ? " is-active" : "")} href={item.href}>
+						{item.label}
+					</a>
+				))
+			}
+			<a class="btn btn-primary menu-cta" href="/contact">Let&rsquo;s talk about it</a>
+			<div class="menu-contact">
+				<a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+				<a href={`mailto:${site.email}`}>{site.email}</a>
+				<span>{site.addressLine}</span>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<script>
+	const toggle = document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+	const menu = document.querySelector<HTMLElement>("[data-mobile-menu]");
+	if (toggle && menu) {
+		const setOpen = (open: boolean) => {
+			menu.hidden = !open;
+			toggle.setAttribute("aria-expanded", String(open));
+			toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+			document.body.classList.toggle("menu-open", open);
+		};
+		toggle.addEventListener("click", () => setOpen(menu.hidden));
+		menu.addEventListener("click", (e) => {
+			const target = (e.target as HTMLElement).closest("a");
+			if (target) setOpen(false);
+		});
+	}
+</script>
+
+<style>
+	body.menu-open {
+		overflow: hidden;
+	}
+</style>

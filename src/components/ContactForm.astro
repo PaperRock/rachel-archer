@@ -1,0 +1,86 @@
+---
+import { site } from "../data/site";
+---
+
+<div class="form-wrap" data-contact-form>
+	<form class="form">
+		<div class="form-row">
+			<div class="field">
+				<label for="cf-name">Name</label>
+				<input id="cf-name" name="name" type="text" autocomplete="name" required />
+			</div>
+			<div class="field">
+				<label for="cf-email">Email</label>
+				<input id="cf-email" name="email" type="email" autocomplete="email" required />
+			</div>
+		</div>
+
+		<div class="field">
+			<label for="cf-phone">Phone Number</label>
+			<input id="cf-phone" name="phone" type="tel" autocomplete="tel" />
+		</div>
+
+		<div class="field">
+			<label for="cf-message">Message</label>
+			<textarea id="cf-message" name="message" rows="5" required></textarea>
+		</div>
+
+		<fieldset class="field">
+			<legend style="display: block; font-weight: 700; font-size: 0.92rem; margin-bottom: 0.45rem">
+				Preferred method of contact <span aria-hidden="true">*</span>
+			</legend>
+			<div class="radio-group">
+				<label>
+					<input type="radio" name="preferred" value="Phone" checked />
+					Phone
+				</label>
+				<label>
+					<input type="radio" name="preferred" value="Email" />
+					Email
+				</label>
+			</div>
+		</fieldset>
+
+		<div>
+			<button class="btn btn-primary" type="submit">Send my message</button>
+			<p class="form-note" style="margin-top: 0.9rem">
+				Your message opens in your email app, ready to send to {site.email}.
+				I&rsquo;ll only use your details to reply.
+			</p>
+		</div>
+	</form>
+
+	<div class="form-success" hidden>
+		<h3>Thanks for reaching out.</h3>
+		<p>I will get back to you within 48 hours.</p>
+	</div>
+</div>
+
+<script>
+	import { site } from "../data/site";
+
+	const wrap = document.querySelector<HTMLElement>("[data-contact-form]");
+	if (wrap) {
+		const form = wrap.querySelector<HTMLFormElement>("form");
+		const success = wrap.querySelector<HTMLElement>(".form-success");
+		form?.addEventListener("submit", (e) => {
+			e.preventDefault();
+			const data = new FormData(form);
+			const subject = `Counselling enquiry from ${data.get("name") || "a visitor"}`;
+			const preferred = data.get("preferred") || "Email";
+			const body = [
+				`Name: ${data.get("name") || ""}`,
+				`Email: ${data.get("email") || ""}`,
+				`Phone: ${data.get("phone") || "—"}`,
+				`Preferred contact: ${preferred}`,
+				``,
+				`Message:`,
+				`${data.get("message") || ""}`,
+			].join("\n");
+			const url = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+			window.location.href = url;
+			form.hidden = true;
+			if (success) success.hidden = false;
+		});
+	}
+</script>

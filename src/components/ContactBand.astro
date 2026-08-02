@@ -1,0 +1,27 @@
+---
+import { site } from "../data/site";
+
+interface Props {
+	heading?: string;
+	sub?: string;
+}
+
+const {
+	heading = "Let&rsquo;s talk about it",
+	sub = "Whether you&rsquo;re not sure what&rsquo;s troubling you or ready to book, I&rsquo;m happy to talk it through &mdash; " +
+		site.replyPromise,
+} = Astro.props;
+---
+
+<section class="container section-tight">
+	<div class="cta-band">
+		<div>
+			<h2 set:html={heading} />
+			<p set:html={sub} />
+		</div>
+		<div class="cta-actions">
+			<a class="btn btn-on-dark" href="/contact">Get in touch</a>
+			<a class="btn btn-ghost-dark" href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+		</div>
+	</div>
+</section>
