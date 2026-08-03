@@ -1,0 +1,46 @@
+---
+title: "Privacy Policy"
+description: >-
+  How Rachel Archer Counselling looks after your details when you get in touch
+  by phone, email, or the contact form.
+hero:
+  lead: >-
+    The short version: when you get in touch, I use your details only to reply
+    to you. I never sell, share, or pass them on.
+---
+
+import Prose from "../../components/Prose.astro";
+import Section from "../../components/Section.astro";
+import { site } from "../../data/site";
+
+<Section>
+  <Prose>
+    Last updated: August 2026.
+
+    ## What I collect
+
+    If you use the contact form, I receive the details you choose to send: your name, email address, phone number (optional), your message, and how you’d prefer me to contact you. When you submit the form, your message is composed in your own email app and sent from your own email account to {site.email}. This website itself never stores your message.
+
+    If you contact me directly by phone or email, I only keep what you choose to tell me.
+
+    ## How I use your details
+
+    I use the details you give me only to reply to your enquiry and, if we go on to work together, to arrange appointments and keep the notes that good counselling practice requires. I keep your details for no purpose other than this.
+
+    ## How long I keep them
+
+    Enquiry emails are kept until the matter is resolved, then deleted. If we work together, I keep counselling records in line with the BACP’s guidance on record-keeping. You can ask me to delete anything I hold at any time, and I will, unless I have an ethical or legal duty to keep it.
+
+    ## Who I share them with
+
+    No one. I don’t sell data, rent it, or pass it on. This website is a simple, static site: it uses no cookies, no analytics, and no tracking.
+
+    ## Your rights
+
+    You have the right to see what information I hold about you, to ask me to correct or delete it, and to complain to the Information Commissioner’s Office (ICO) if you feel I’ve handled your data incorrectly. To exercise any of these rights, just ask me.
+
+    ## Contact
+
+    For anything to do with your personal data, contact Rachel Archer by phone on <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a> or email at <a href={`mailto:${site.email}`}>{site.email}</a>.
+  </Prose>
+</Section>

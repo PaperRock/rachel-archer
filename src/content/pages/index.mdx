@@ -1,0 +1,59 @@
+---
+title: "Counselling in Maidstone — In-Person and Online Video Counselling"
+home:
+  title: "*Counselling* in Maidstone"
+  intro: >-
+    I appreciate how daunting it is to take the first step and share your
+    feelings of anxiety or depression. My clients often express relief from
+    being able to discuss their grief, anger, or shame.
+  trust:
+    - "Humanistic & integrative"
+    - "IFS-informed"
+cta:
+  heading: "Let's talk about it"
+  sub: >-
+    The first step can feel like the hardest. I'm here to make it easier —
+    I'll get back to you within 48 hours.
+---
+
+import HomeHero from "../../components/HomeHero.astro";
+import Section from "../../components/Section.astro";
+import Split from "../../components/Split.astro";
+import BasicList from "../../components/BasicList.astro";
+import PathCard from "../../components/PathCard.astro";
+
+<HomeHero {...frontmatter.home} />
+
+<Section>
+  <Split>
+    <div slot="left">
+      <span class="divider-seed" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2.5c5 3.2 7.5 7.4 7.5 12.6a7.5 7.5 0 0 1-15 0C4.5 9.9 7 5.7 12 2.5Z" fill="currentColor" />
+        </svg>
+      </span>
+      <p class="lead">“Establishing a genuine connection is at the heart of my counselling practice, helping my clients to feel at ease to share what is troubling them — face to face or online.”</p>
+    </div>
+    <div slot="right">
+      <p>Many people reach a point in their lives where old habits of managing thoughts and feelings no longer work. We are mistakenly led to believe that a frenzy of activity will quiet our unrest. Beneath it lies a range of psychological challenges that counselling can help with.</p>
+      <BasicList
+        label="Issues I can help with"
+        items={["Depression", "Overwhelming stress", "Anxiety", "Panic attacks", "Perfectionism", "Addictions", "Grief, anger & shame", "Relationship problems"]}
+      />
+      <p style="margin-top: 1.75rem">Suppressing emotions simply makes life more difficult and hinders our relationships. Talking it through — with someone who listens without judgement — can change that.</p>
+    </div>
+  </Split>
+</Section>
+
+<Section alt>
+  <h2 style="max-width: 22ch; margin-bottom: 1.2rem">Two ways to work together</h2>
+  <p class="text-soft" style="max-width: 52ch; margin-bottom: 2.5rem">Counselling happens in person at my practice in Maidstone, or online wherever you are. Both are built around you.</p>
+  <div class="paths">
+    <PathCard title="Counselling in Maidstone" href="/about-therapy" label="About counselling">
+      A calm, safe space at Cave Hill, Maidstone where we meet face to face for an hour each week, working at your pace.
+    </PathCard>
+    <PathCard title="Online video & phone counselling" href="/online-counselling" label="Online counselling">
+      From the comfort of your own home, over the phone, Skype, FaceTime or WhatsApp — for anyone who can’t get to Maidstone.
+    </PathCard>
+  </div>
+</Section>

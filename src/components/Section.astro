@@ -1,0 +1,18 @@
+---
+interface Props {
+	alt?: boolean;
+	tight?: boolean;
+}
+
+const { alt = false, tight = false } = Astro.props;
+
+const classes = ["section", alt ? "section-alt" : "", tight ? "section-tight" : ""]
+	.filter(Boolean)
+	.join(" ");
+---
+
+<section class={classes}>
+	<div class="container">
+		<slot />
+	</div>
+</section>

@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+
+interface Props {
+	entry: CollectionEntry<"pages">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, description, hero, cta } = entry.data;
+---
+
+<BaseLayout title={title} description={description}>
+	{hero && <PageHero title={title} lead={hero.lead} />}
+	<Content />
+	{cta.show !== false && <ContactBand heading={cta.heading} sub={cta.sub} />}
+</BaseLayout>

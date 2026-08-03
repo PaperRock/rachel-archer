@@ -1,0 +1,70 @@
+---
+import { site } from "../data/site";
+
+interface Props {
+	title: string;
+	intro: string;
+	trust: string[];
+}
+
+const { title, intro, trust } = Astro.props;
+
+const titleHtml = title
+	.split("*")
+	.map((part, i) => (i % 2 === 1 ? `<span class="em">${part}</span>` : part))
+	.join("");
+---
+
+<section class="hero">
+	<div class="container">
+		<div class="hero-grid">
+			<div class="hero-content">
+				<h1 set:html={titleHtml} />
+
+				<p class="hero-sub">{site.subtagline}</p>
+
+				<p class="hero-intro">{intro}</p>
+
+				<div class="hero-actions">
+					<a class="btn btn-primary" href="/contact">Let&rsquo;s talk about it</a>
+					<a class="btn btn-ghost" href={`tel:${site.phoneTel}`}>
+						Call {site.phoneDisplay}
+					</a>
+				</div>
+
+				<p class="hero-trust">
+					<span>{site.bacp.label}</span>
+					{trust.map((item) => (
+						<>
+							<span class="dot" aria-hidden="true">&bull;</span>
+							<span>{item}</span>
+						</>
+					))}
+				</p>
+			</div>
+
+			<div class="hero-media">
+				<div class="frame">
+					<img
+						src="/images/rachel-archer.jpg"
+						alt="Rachel Archer, counsellor in Maidstone"
+						width="1000"
+						height="1500"
+						fetchpriority="high"
+					/>
+				</div>
+				<span class="hero-loc">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+						<path
+							d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z"
+							stroke="currentColor"
+							stroke-width="1.7"
+						/>
+						<circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.7" />
+					</svg>
+					{site.addressLine}
+				</span>
+			</div>
+		</div>
+	</div>
+</section>

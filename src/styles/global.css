@@ -17,8 +17,8 @@
 	--surface: #ffffff;
 	--ink: #141414;
 	--ink-soft: #484848;
-  --accent: #a7d49b;
-  --accent-deep: #92ac86;
+	--accent: #a7d49b;
+	--accent-deep: #92ac86;
 	--clay: #fd5622;
 	--line: rgba(20, 20, 20, 0.12);
 	--line-strong: rgba(20, 20, 20, 0.22);
@@ -299,7 +299,7 @@ em {
 	position: sticky;
 	top: 0;
 	z-index: 50;
-	background: color-mix(in srgb, var(--accent-deep) 88%, transparent);
+	background: color-mix(in srgb, var(--paper) 88%, transparent);
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
 	border-bottom: 1px solid var(--line);
@@ -461,7 +461,6 @@ em {
 /* ---------- hero (home) ---------- */
 .hero {
 	padding-block: clamp(3.25rem, 8vw, 5.75rem) 0;
-  background: var(--accent-deep);
 }
 
 .hero-grid {
@@ -478,7 +477,6 @@ em {
 	background: var(--accent);
 	border-radius: 0.08em;
 	padding: 0 0.12em;
-	box-shadow: 0 0 0 2px rgba(20, 20, 20, 0.28);
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
 }
@@ -598,6 +596,9 @@ em {
 	gap: clamp(2rem, 5vw, 4.5rem);
 	align-items: start;
 }
+.split h2 {
+	margin-bottom: 1.4rem;
+}
 @media (max-width: 820px) {
 	.split {
 		grid-template-columns: 1fr;
@@ -623,12 +624,21 @@ em {
 	margin-top: 1.75rem;
 }
 .issues li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
 	background: var(--surface);
 	border: 1px solid var(--line-strong);
 	border-radius: 999px;
 	padding: 0.45rem 1.05rem;
 	font-size: 0.92rem;
 	font-weight: 500;
+	color: var(--ink);
+}
+.issues li svg {
+	flex-shrink: 0;
+	width: 1.15em;
+	height: 1.15em;
 	color: var(--ink);
 }
 
@@ -713,6 +723,12 @@ em {
 	margin: 0;
 	color: var(--ink-soft);
 }
+.faq-item p + p {
+	margin-top: 0.9rem;
+}
+.faq-item .text-link {
+	margin-top: 1rem;
+}
 .faq-item .faq-highlight {
 	color: var(--ink);
 	font-weight: 500;
@@ -754,8 +770,12 @@ em {
 
 /* ---------- trust band ---------- */
 .trust-row {
+  padding: 8px;
+  border-radius: var(--radius-s);
+  background: var(--surface);
 	display: flex;
 	flex-wrap: wrap;
+  max-width: fit-content;
 	align-items: center;
 	gap: 1.5rem 2rem;
 	margin-top: 1.6rem;
@@ -767,7 +787,7 @@ em {
 	text-underline-offset: 3px;
 }
 .bacp-mark img {
-	height: 44px;
+	height: 56px;
 	width: auto;
 }
 
@@ -797,7 +817,7 @@ em {
 	flex-wrap: wrap;
 	gap: 0.9rem;
 }
-.cta-band a {
+.cta-band a:not(.btn) {
 	color: var(--on-dark-link);
 }
 

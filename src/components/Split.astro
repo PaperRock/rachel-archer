@@ -1,0 +1,16 @@
+---
+interface Props {
+	stickyLeft?: boolean;
+}
+
+const { stickyLeft = false } = Astro.props;
+---
+
+<div class="split">
+	<div class={stickyLeft ? "sticky-side" : undefined}>
+		<slot name="left" />
+	</div>
+	<div>
+		<slot name="right" />
+	</div>
+</div>

@@ -1,0 +1,55 @@
+---
+import { site } from "../data/site";
+---
+
+<aside class="fee-panel">
+	<h2 style="font-size: 1.6rem; margin-bottom: 1.1rem">Fees</h2>
+	<div class="fee">
+		<span class="fee-num">{site.fee}</span>
+		<span class="fee-unit">{site.feeDetail}</span>
+	</div>
+	<p style="margin-top: 1rem">{site.feeNote}</p>
+
+	<hr />
+
+	<ul class="detail-list">
+		<li>
+			<span class="mark" aria-hidden="true">&bull;</span>
+			<span><strong>Where</strong> &mdash; {site.addressLine}</span>
+		</li>
+		<li>
+			<span class="mark" aria-hidden="true">&bull;</span>
+			<span>
+				<strong>Phone</strong> &mdash; <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+			</span>
+		</li>
+		<li>
+			<span class="mark" aria-hidden="true">&bull;</span>
+			<span>
+				<strong>Email</strong> &mdash; <a href={`mailto:${site.email}`}>{site.email}</a>
+			</span>
+		</li>
+	</ul>
+
+	<hr />
+
+	<p style="font-size: 0.95rem">
+		{site.bacp.label}. {site.bacp.framework}
+	</p>
+	<div class="trust-row">
+		<a
+			class="bacp-mark"
+			href={site.bacp.url}
+			target="_blank"
+			rel="noopener"
+			aria-label="Visit the BACP website"
+		>
+			<img
+				src="/images/bacp-logo.png"
+				alt="BACP — British Association for Counselling and Psychotherapy"
+				width="208"
+				height="92"
+			/>
+		</a>
+	</div>
+</aside>

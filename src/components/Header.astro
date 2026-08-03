@@ -43,25 +43,25 @@ const isActive = (href: string) =>
 			</svg>
 		</button>
 	</div>
-
-	<div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
-		<nav class="mobile-menu__inner" aria-label="Mobile menu">
-			{
-				nav.map((item) => (
-					<a class={"menu-link" + (isActive(item.href) ? " is-active" : "")} href={item.href}>
-						{item.label}
-					</a>
-				))
-			}
-			<a class="btn btn-primary menu-cta" href="/contact">Let&rsquo;s talk about it</a>
-			<div class="menu-contact">
-				<a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
-				<a href={`mailto:${site.email}`}>{site.email}</a>
-				<span>{site.addressLine}</span>
-			</div>
-		</nav>
-	</div>
 </header>
+
+<div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+	<nav class="mobile-menu__inner" aria-label="Mobile menu">
+		{
+			nav.map((item) => (
+				<a class={"menu-link" + (isActive(item.href) ? " is-active" : "")} href={item.href}>
+					{item.label}
+				</a>
+			))
+		}
+		<a class="btn btn-primary menu-cta" href="/contact">Let&rsquo;s talk about it</a>
+		<div class="menu-contact">
+			<a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+			<a href={`mailto:${site.email}`}>{site.email}</a>
+			<span>{site.addressLine}</span>
+		</div>
+	</nav>
+</div>
 
 <script>
 	const toggle = document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
