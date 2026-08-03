@@ -627,7 +627,7 @@ em {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
-	background: var(--surface);
+	background: var(--paper-deep);
 	border: 1px solid var(--line-strong);
 	border-radius: 999px;
 	padding: 0.45rem 1.05rem;
