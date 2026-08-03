@@ -1,5 +1,6 @@
 ---
 import { site } from "../data/site";
+import Icon from "./Icon.astro";
 
 interface Props {
 	heading?: string;
@@ -7,7 +8,7 @@ interface Props {
 }
 
 const {
-	heading = "Let&rsquo;s talk about it",
+	heading = "Let&rsquo;s talk",
 	sub = "Whether you&rsquo;re not sure what&rsquo;s troubling you or ready to book, I&rsquo;m happy to talk it through &mdash; " +
 		site.replyPromise,
 } = Astro.props;
@@ -20,8 +21,14 @@ const {
 			<p set:html={sub} />
 		</div>
 		<div class="cta-actions">
-			<a class="btn btn-on-dark" href="/contact">Get in touch</a>
-			<a class="btn btn-ghost-dark" href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+			<a class="btn btn-on-dark" href="/contact">
+				<Icon name="speech" size={16} />
+				Get in touch
+			</a>
+			<a class="btn btn-ghost-dark" href={`tel:${site.phoneTel}`}>
+				<Icon name="phone" size={16} />
+				{site.phoneDisplay}
+			</a>
 		</div>
 	</div>
 </section>

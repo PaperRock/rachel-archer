@@ -1,5 +1,6 @@
 ---
 import { site } from "../data/site";
+import Icon from "./Icon.astro";
 
 interface Props {
 	title: string;
@@ -26,8 +27,12 @@ const titleHtml = title
 				<p class="hero-intro">{intro}</p>
 
 				<div class="hero-actions">
-					<a class="btn btn-primary" href="/contact">Let&rsquo;s talk about it</a>
+					<a class="btn btn-primary" href="/contact">
+						<Icon name="speech" size={16} />
+						Let&rsquo;s talk
+					</a>
 					<a class="btn btn-ghost" href={`tel:${site.phoneTel}`}>
+						<Icon name="phone" size={16} />
 						Call {site.phoneDisplay}
 					</a>
 				</div>
@@ -54,14 +59,7 @@ const titleHtml = title
 					/>
 				</div>
 				<span class="hero-loc">
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-						<path
-							d="M12 21s-7-5.1-7-11a7 7 0 0 1 14 0c0 5.9-7 11-7 11Z"
-							stroke="currentColor"
-							stroke-width="1.7"
-						/>
-						<circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.7" />
-					</svg>
+					<Icon name="location" size={14} />
 					{site.addressLine}
 				</span>
 			</div>
