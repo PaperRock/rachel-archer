@@ -24,7 +24,7 @@ A warm, human, individual practice in deliberate contrast to clinical or corpora
 
 ## Operating Context
 
-Counselling happens in person at Cave Hill, Maidstone (ME15 6DX) or online via phone, Skype, FaceTime, or WhatsApp. Sessions are 1 hour. Clients make first contact by phone (07915 101 997) or email (rachelarchertherapy@gmail.com) and are promised a reply within 48 hours. The practice is active on Instagram (@rachelarchertherapy) and Facebook. Rachel is a registered member of the BACP and abides by their Ethical Framework. Meta description of the incumbent site: "Feeling stuck, anxious or experiencing relationship problems - I can help."
+Counselling happens in person at Loose, Anglesey Avenue, Maidstone (ME15 6DX) or online via phone, Skype, FaceTime, or WhatsApp. Sessions are 1 hour. Clients make first contact by phone (07915 101 997) or email (rachelarchertherapy@gmail.com) and are promised a reply within 48 hours. The practice is active on Instagram (@rachelarchertherapy) and Facebook. Rachel is a registered member of the BACP and abides by their Ethical Framework. Meta description of the incumbent site: "Feeling stuck, anxious or experiencing relationship problems - I can help."
 
 ## Capabilities and Constraints
 
@@ -40,7 +40,7 @@ Counselling happens in person at Cave Hill, Maidstone (ME15 6DX) or online via p
 - Business name: Rachel Archer Counselling. Home tagline: "Counselling in Maidstone — In-Person and Online Video Counselling."
 - Voice (drawn from incumbent copy): warm, gentle, direct, reassuring, first-person; normalises and destigmatises. Confirmed lines: "I appreciate how daunting it is to take the first step"; "Establishing a genuine connection is at the heart of my counselling practice"; "By treating yourself with compassion rather than judgement, positive change can happen"; "Let's talk about it."
 - Trust markers are binding: BACP registration, adherence to the BACP Ethical Framework, ~5 years of experience as a counsellor, and ongoing professional training.
-- Contact and fee facts are confirmed and must be preserved: phone 07915 101 997, email rachelarchertherapy@gmail.com, Cave Hill, Maidstone ME15 6DX, £55/hour, reduced fee for students/low-income/NHS staff, 48-hour reply promise.
+- Contact and fee facts are confirmed and must be preserved: phone 07915 101 997, email rachelarchertherapy@gmail.com, Loose, Anglesey Avenue, Maidstone ME15 6DX, £55/hour, reduced fee for students/low-income/NHS staff, 48-hour reply promise.
 
 ## Evidence on Hand
 

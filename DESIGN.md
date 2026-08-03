@@ -60,7 +60,7 @@ One authored moment: a soft page crossfade via Astro View Transitions, with head
 
 ## Trust markers (non-negotiable)
 
-BACP registration, BACP Ethical Framework, five years' experience, ongoing training, phone 07915 101 997, email rachelarchertherapy@gmail.com, Cave Hill Maidstone ME15 6DX, £55/hour, reduced fee (students / low-income / NHS staff), 48-hour reply promise.
+BACP registration, BACP Ethical Framework, five years' experience, ongoing training, phone 07915 101 997, email rachelarchertherapy@gmail.com, Loose, Anglesey Avenue, Maidstone ME15 6DX, £55/hour, reduced fee (students / low-income / NHS staff), 48-hour reply promise.
 
 ## Accessibility
 

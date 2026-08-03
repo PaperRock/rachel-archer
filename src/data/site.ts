@@ -9,11 +9,11 @@ export const site = {
 	email: "rachelarchertherapy@gmail.com",
 	privacyPolicy: "/privacy-policy",
 	address: {
-		line1: "Cave Hill",
-		line2: "Maidstone",
+		line1: "Anglesey Avenue",
+		line2: "Loose, Maidstone",
 		postcode: "ME15 6DX",
 	},
-	addressLine: "Cave Hill, Maidstone, ME15 6DX",
+	addressLine: "Loose, Anglesey Avenue, Maidstone",
 	fee: "£55",
 	feeDetail: "per 1-hour session",
 	feeNote:
