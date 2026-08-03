@@ -7,6 +7,7 @@ export const site = {
 	phoneDisplay: "07915 101 997",
 	phoneTel: "+447915101997",
 	email: "rachelarchertherapy@gmail.com",
+	privacyPolicy: "/privacy-policy",
 	address: {
 		line1: "Cave Hill",
 		line2: "Maidstone",
@@ -28,7 +29,6 @@ export const site = {
 		framework: "I abide by the BACP Ethical Framework.",
 		url: "https://www.bacp.co.uk/",
 	},
-	experience: "five years' experience as a counsellor",
 } as const;
 
 export const nav = [

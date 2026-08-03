@@ -4,7 +4,7 @@
 
 ## World
 
-**Calm, warm, editorial — with a hot-pink highlight.** A rebuild (not a Wix port) of the incumbent therapy site, committed to putting an anxious visitor at ease first. The visual voice is a warm, bookish editorial practice — human, honest, generous — in deliberate contrast to clinical or corporate therapy templates. The direction was pinned by the brief (the user chose it); no concept roll. The palette follows the reference scheme the user specified (receivio.framer.media): warm cream ground, near-black ink, a single hot-pink highlight colour used as a marker behind the hero accent word, and an electric-blue link/focus tone.
+**Calm, warm, editorial — with a lime highlight and deep-forest grounding.** A rebuild (not a Wix port) of the incumbent therapy site, committed to putting an anxious visitor at ease first. The visual voice is a warm, bookish editorial practice — human, honest, generous — in deliberate contrast to clinical or corporate therapy templates. The direction was pinned by the brief (the user chose it); no concept roll. The palette — warm cream ground, near-black ink, a single lime highlight used as a marker behind the hero accent word, and a deep-forest tone for links, focus rings, the sticky header and the full-bleed hero band — was pinned by the user at the first critique round, superseding the earlier hot-pink/blue reference.
 
 ## Tokens
 
@@ -16,8 +16,8 @@
 | `--surface` | `#ffffff` | cards, panels, inputs |
 | `--ink` | `#141414` | near-black text + primary buttons + dark panels |
 | `--ink-soft` | `#484848` | secondary text (≈8:1 on paper) |
-| `--accent` | `#ffb4f9` | hot-pink highlight — marks, hero `<em>` marker, hover fills |
-| `--accent-deep` | `#0217fe` | electric-blue links, focus rings (≈7.2:1 on paper) |
+| `--accent` | `#a7d49b` | lime highlight — hero `<em>` marker, divider seeds, dot separators, form-success border, hover fills (ink ≥11:1) |
+| `--accent-deep` | `#92ac86` | deep forest — links, focus rings, sticky header band, hero band, button hover fills (ink ≥7:1 on forest) |
 | `--clay` | `#fd5622` | warm note, used only in tiny marks |
 | `--line` | `rgba(20,20,20,0.12)` | hairlines |
 | `--line-strong` | `rgba(20,20,20,0.22)` | decorative borders (content chips) |
@@ -44,19 +44,19 @@ One authored moment: a soft page crossfade via Astro View Transitions, with head
 
 - Max width `1140px`, gutter `clamp(1.25rem, 4vw, 2.5rem)`, section rhythm `clamp(4.5rem, 10vw, 8rem)`.
 - `.split` two-column for interior prose pages (photo/heading left, prose right); collapses below 820px. Sticky photo rail on Approach.
-- Hero: two-column grid (copy left, portrait right with a location tag); single column on mobile, photo below copy.
+- Hero: full-bleed deep-forest band; two-column grid (copy left, portrait right with a location tag); single column on mobile, photo below copy.
 - Editorial rhythm: generous whitespace, more space above a heading than below; prose sections over icon-card grids.
 
 ## Components
 
-- **Header**: sticky, translucent paper with backdrop blur; serif wordmark + tracked sub-line; desktop underline nav; pill CTA "Let's talk about it"; mobile hamburger → full-height menu under the header bar with big serif links, contact block, scroll lock.
+- **Header**: sticky, translucent deep-forest band with backdrop blur; serif wordmark + tracked sub-line; desktop underline nav; pill CTA "Let's talk about it"; mobile hamburger → full-height menu under the header bar with big serif links, contact block, scroll lock.
 - **Footer**: espresso band; brand + practice/contact/professional columns; social round icons; BACP badge linking out; dynamic copyright year.
-- **Buttons**: pill; primary near-black, ghost with control-border, on-dark variants; hot-pink hover fill with ink text; 1px lift on hover.
+- **Buttons**: pill; primary near-black, ghost with control-border, on-dark variants; deep-forest hover fill with ink text; 1px lift on hover.
 - **CTA band**: near-black rounded panel, heading + reassurance line, contact actions.
 - **Issues chips**: surface pills enumerating presenting issues (content, non-interactive).
 - **FAQ**: surface panels, one open question + an invitation to ask more.
 - **Fee panel**: big serif fee, reduced-fee note, contact details, BACP badge.
-- **Contact form**: native validation (no `novalidate`), custom radios, mailto delivery that opens the visitor's email app, then shows the incumbent success message ("Thanks for reaching out. I will get back to you within 48 hours.").
+- **Contact form**: native validation (no `novalidate`), custom radios, mailto delivery that opens the visitor's email app, then shows an honest handoff panel — it never claims the message was sent — with a direct `mailto:` fallback and the 48-hour reply promise retained only in that fallback.
 
 ## Trust markers (non-negotiable)
 
@@ -64,7 +64,7 @@ BACP registration, BACP Ethical Framework, five years' experience, ongoing train
 
 ## Accessibility
 
-High bar per PRODUCT.md: the audience lives with anxiety and panic attacks, so the surface is calm and low-friction. Skip link, semantic landmarks (`main`, `nav` for desktop and mobile), visible focus rings (≥3:1), control borders ≥3:1, text contrast ≥4.5:1, `prefers-reduced-motion` honored, no autoplay or flashing. Three FAQ answers beyond the fee item are intentionally omitted because they were client-rendered and unrecoverable from the incumbent site — the section ships the fee Q/A plus an invitation to ask.
+High bar per PRODUCT.md: the audience lives with anxiety and panic attacks, so the surface is calm and low-friction. Skip link, semantic landmarks (`main`, `nav` for desktop and mobile), visible focus rings (≥3:1), control borders ≥3:1, text contrast ≥4.5:1, `prefers-reduced-motion` honored, no autoplay or flashing. On the deep-forest band (sticky header, hero) text is near-black ink (≥7:1) to hold the 4.5:1 floor. Three FAQ answers beyond the fee item are intentionally omitted because they were client-rendered and unrecoverable from the incumbent site — the section ships the fee Q/A plus an invitation to ask.
 
 ## Delivery
 

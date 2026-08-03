@@ -27,16 +27,16 @@ import { site } from "../data/site";
 
 		<fieldset class="field">
 			<legend style="display: block; font-weight: 700; font-size: 0.92rem; margin-bottom: 0.45rem">
-				Preferred method of contact <span aria-hidden="true">*</span>
+				How should I get back to you?
 			</legend>
 			<div class="radio-group">
 				<label>
-					<input type="radio" name="preferred" value="Phone" checked />
-					Phone
+					<input type="radio" name="preferred" value="Email" checked />
+					Email
 				</label>
 				<label>
-					<input type="radio" name="preferred" value="Email" />
-					Email
+					<input type="radio" name="preferred" value="Phone" />
+					Phone
 				</label>
 			</div>
 		</fieldset>
@@ -45,14 +45,19 @@ import { site } from "../data/site";
 			<button class="btn btn-primary" type="submit">Send my message</button>
 			<p class="form-note" style="margin-top: 0.9rem">
 				Your message opens in your email app, ready to send to {site.email}.
-				I&rsquo;ll only use your details to reply.
+				I&rsquo;ll only use your details to reply &mdash;
+				<a href={site.privacyPolicy}>see how I look after them</a>.
 			</p>
 		</div>
 	</form>
 
 	<div class="form-success" hidden>
-		<h3>Thanks for reaching out.</h3>
-		<p>I will get back to you within 48 hours.</p>
+		<h3>One more step</h3>
+		<p>
+			Your message should now be open in your email app, ready to send. If nothing
+			opened, email me directly at <a href="mailto:{site.email}">{site.email}</a>
+			and I&rsquo;ll get back to you within 48 hours.
+		</p>
 	</div>
 </div>
 
@@ -63,6 +68,7 @@ import { site } from "../data/site";
 	if (wrap) {
 		const form = wrap.querySelector<HTMLFormElement>("form");
 		const success = wrap.querySelector<HTMLElement>(".form-success");
+		let launched = false;
 		form?.addEventListener("submit", (e) => {
 			e.preventDefault();
 			const data = new FormData(form);
@@ -78,8 +84,10 @@ import { site } from "../data/site";
 				`${data.get("message") || ""}`,
 			].join("\n");
 			const url = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-			window.location.href = url;
-			form.hidden = true;
+			if (!launched) {
+				window.location.href = url;
+				launched = true;
+			}
 			if (success) success.hidden = false;
 		});
 	}

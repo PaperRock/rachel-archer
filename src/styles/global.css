@@ -1,6 +1,6 @@
 /* ============================================================
    Rachel Archer Counselling — global styles
-   Calm, warm, editorial. Ivory paper, espresso ink, sage accent.
+   Calm, warm, editorial. Ivory paper, espresso ink, lime + forest accents.
    ============================================================ */
 
 @import "@fontsource/alegreya/500.css";
@@ -17,8 +17,8 @@
 	--surface: #ffffff;
 	--ink: #141414;
 	--ink-soft: #484848;
-	--accent: #ffb4f9;
-	--accent-deep: #0217fe;
+  --accent: #a7d49b;
+  --accent-deep: #92ac86;
 	--clay: #fd5622;
 	--line: rgba(20, 20, 20, 0.12);
 	--line-strong: rgba(20, 20, 20, 0.22);
@@ -83,7 +83,7 @@ body {
 }
 
 ::selection {
-	background: rgba(255, 180, 249, 0.35);
+	background: rgba(167, 212, 155, 0.45);
 }
 
 :focus-visible {
@@ -243,7 +243,7 @@ em {
 }
 .btn-primary:hover {
 	background: var(--accent-deep);
-	color: #fff;
+	color: var(--ink);
 }
 
 .btn-ghost {
@@ -299,7 +299,7 @@ em {
 	position: sticky;
 	top: 0;
 	z-index: 50;
-	background: color-mix(in srgb, var(--paper) 88%, transparent);
+	background: color-mix(in srgb, var(--accent-deep) 88%, transparent);
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
 	border-bottom: 1px solid var(--line);
@@ -333,7 +333,7 @@ em {
 	font-size: 0.66rem;
 	text-transform: uppercase;
 	letter-spacing: 0.18em;
-	color: var(--ink-soft);
+	color: var(--ink);
 	margin-top: 2px;
 }
 
@@ -344,7 +344,7 @@ em {
 }
 .nav a {
 	position: relative;
-	color: var(--ink-soft);
+	color: var(--ink);
 	text-decoration: none;
 	font-weight: 500;
 	font-size: 0.97rem;
@@ -384,7 +384,7 @@ em {
 .nav-toggle {
 	display: none;
 	margin-inline-start: auto;
-	background: none;
+	background: color-mix(in srgb, var(--paper) 92%, transparent);
 	border: 1px solid var(--control-border);
 	border-radius: var(--radius-s);
 	width: 44px;
@@ -461,6 +461,7 @@ em {
 /* ---------- hero (home) ---------- */
 .hero {
 	padding-block: clamp(3.25rem, 8vw, 5.75rem) 0;
+  background: var(--accent-deep);
 }
 
 .hero-grid {
@@ -477,6 +478,7 @@ em {
 	background: var(--accent);
 	border-radius: 0.08em;
 	padding: 0 0.12em;
+	box-shadow: 0 0 0 2px rgba(20, 20, 20, 0.28);
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
 }
@@ -487,7 +489,7 @@ em {
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 0.14em;
-	color: var(--ink-soft);
+	color: var(--ink);
 }
 
 .hero-intro {
@@ -506,11 +508,11 @@ em {
 .hero-trust {
 	margin-top: 2.2rem;
 	font-size: 0.82rem;
-	color: var(--ink-soft);
+	color: var(--ink);
 	letter-spacing: 0.02em;
 }
 .hero-trust .dot {
-	color: var(--accent);
+	color: var(--ink);
 	margin-inline: 0.35em;
 }
 
@@ -940,7 +942,7 @@ em {
 .field textarea:focus {
 	outline: none;
 	border-color: var(--accent-deep);
-	box-shadow: 0 0 0 3px rgba(68, 80, 61, 0.4);
+	box-shadow: 0 0 0 3px rgba(146, 172, 134, 0.45);
 }
 .field input::placeholder,
 .field textarea::placeholder {

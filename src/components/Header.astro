@@ -45,7 +45,7 @@ const isActive = (href: string) =>
 	</div>
 
 	<div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
-		<nav class="mobile-menu__inner" aria-label="Main">
+		<nav class="mobile-menu__inner" aria-label="Mobile menu">
 			{
 				nav.map((item) => (
 					<a class={"menu-link" + (isActive(item.href) ? " is-active" : "")} href={item.href}>

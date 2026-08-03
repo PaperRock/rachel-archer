@@ -26,7 +26,7 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		<title>{fullTitle}</title>
 		<meta name="description" content={description} />
-		<meta name="theme-color" content="#f6f0e2" />
+		<meta name="theme-color" content="#92ac86" />
 		<link rel="canonical" href={pageUrl} />
 
 		<meta property="og:type" content="website" />
@@ -38,8 +38,8 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href
 	</head>
 	<body>
 		<!--
-			THESIS: A warm, human counselling practice for anxious visitors deciding whether to reach out. Calm first, persuasion second; refuses the clinical template and the templated therapy-theme (cream + serif + terracotta) by committing to a warm-cream editorial world with a hot-pink highlight.
-			OWN-WORLD: warm cream paper (#f6f0e2) with near-black ink (#141414); hot-pink highlight (#ffb4f9) with electric-blue links and focus rings (#0217fe); clay orange appears only in the smallest marks. Alegreya serif for display, Karla for body; generous whitespace, 68ch prose, rounded frames and panels, one gentle entrance and soft page fades.
+			THESIS: A warm, human counselling practice for anxious visitors deciding whether to reach out. Calm first, persuasion second; refuses the clinical template and the templated therapy-theme (cream + serif + terracotta) by committing to a warm-cream editorial world with a lime highlight and deep-forest grounding bands.
+			OWN-WORLD: warm cream paper (#f6f0e2) with near-black ink (#141414); lime highlight (#a7d49b) with deep-forest links, focus rings, sticky header and hero band (#92ac86); clay orange appears only in the smallest marks. Alegreya serif for display, Karla for body; generous whitespace, 68ch prose, rounded frames and panels, one gentle entrance and soft page fades.
 			STORY: The visitor is met with a human face and honest words, understands Rachel is BACP-registered, warm and individual, and knows the exact, easy ways to make first contact within 48 hours.
 			FIRST VIEWPORT: two-column hero. Left: serif "Counselling in Maidstone" with an italic accent, a small tracked sub-line, a reassuring intro, "Let's talk about it" plus a call action, and a quiet BACP trust line. Right: Rachel's portrait in a rounded frame with a location tag.
 			FORM: user-pinned "calm, warm, editorial" direction; no concept roll (brief-pinned per new-work).
@@ -57,8 +57,5 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href
 		<script>
 			import "astro:transitions/client";
 		</script>
-	<!-- impeccable-live-start -->
-<script is:inline src="http://localhost:8400/live.js?token=640c4cfe-1efe-4f8f-90a0-bd93ba9db8f9"></script>
-<!-- impeccable-live-end -->
-</body>
+	</body>
 </html>
