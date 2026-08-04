@@ -616,8 +616,9 @@ h1 .em {
 	margin-bottom: 1.4rem;
 }
 @media (max-width: 820px) {
-	.split {
-		grid-template-columns: 1fr;
+	.split,
+	.split.split-wide-left {
+		grid-template-columns: minmax(0, 1fr);
 		gap: 2rem;
 	}
 }
