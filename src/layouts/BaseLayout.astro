@@ -11,9 +11,11 @@ interface Props {
 
 const { title, description = site.description } = Astro.props;
 
-const fullTitle = title.includes("Rachel Archer")
-	? title
-	: `${title} | Rachel Archer Counselling`;
+const cleanTitle = title.replaceAll("*", "");
+
+const fullTitle = cleanTitle.includes("Rachel Archer")
+	? cleanTitle
+	: `${cleanTitle} | Rachel Archer Counselling`;
 
 const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
 ---

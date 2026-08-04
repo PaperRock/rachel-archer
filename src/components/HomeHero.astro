@@ -1,4 +1,5 @@
 ---
+import { emphasizeTitle } from "../lib/emphasis";
 import { site } from "../data/site";
 import Icon from "./Icon.astro";
 
@@ -10,10 +11,7 @@ interface Props {
 
 const { title, intro, trust } = Astro.props;
 
-const titleHtml = title
-	.split("*")
-	.map((part, i) => (i % 2 === 1 ? `<span class="em">${part}</span>` : part))
-	.join("");
+const titleHtml = emphasizeTitle(title);
 ---
 
 <section class="hero">

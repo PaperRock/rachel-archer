@@ -18,10 +18,10 @@ import ContactForm from "../../components/ContactForm.astro";
 import FeePanel from "../../components/FeePanel.astro";
 
 <Section>
-  <Split>
+  <Split wideLeft>
     <div slot="left">
-      <h2 style="margin-bottom: 0.75rem">Send me a message</h2>
-      <p class="text-soft" style="max-width: 50ch; margin-bottom: 2rem">Fill out the form and I will be in touch within 48 hours. My practice is located in Maidstone or online, and I provide counselling to adults.</p>
+      <h2 style="margin-bottom: var(--space-3)">Send me a message</h2>
+      <p class="text-soft" style="max-width: 50ch; margin-bottom: var(--space-9)">Fill out the form and I will be in touch within 48 hours. My practice is located in Maidstone or online, and I provide counselling to adults.</p>
       <ContactForm />
     </div>
     <div slot="right">

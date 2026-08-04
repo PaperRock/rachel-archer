@@ -1,4 +1,6 @@
 ---
+import { emphasizeTitle } from "../lib/emphasis";
+
 interface Props {
 	title: string;
 	lead?: string;
@@ -9,7 +11,7 @@ const { title, lead } = Astro.props;
 
 <section class="page-hero">
 	<div class="container">
-		<h1>{title}</h1>
+		<h1 set:html={emphasizeTitle(title)} />
 		{lead && <p class="lead page-lead">{lead}</p>}
 	</div>
 </section>

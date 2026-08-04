@@ -41,7 +41,23 @@
 
 	--maxw: 1140px;
 	--gutter: clamp(1.25rem, 4vw, 2.5rem);
-	--space-section: clamp(4.5rem, 10vw, 8rem);
+	--space-section: clamp(2.25rem, 5vw, 4rem);
+
+	/* spacing scale — quarter-rem base, 4px steps at 16px */
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.25rem;
+	--space-6: 1.5rem;
+	--space-7: 1.75rem;
+	--space-8: 2rem;
+	--space-9: 2.25rem;
+	--space-10: 2.5rem;
+	--space-11: 2.75rem;
+	--space-12: 3rem;
+	--space-13: 3.5rem;
+	--space-14: 4rem;
 
 	--ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -151,25 +167,21 @@ em {
 	padding-inline: var(--gutter);
 }
 
-.page {
-	padding-block-start: clamp(2.5rem, 6vw, 4.5rem);
+.prose {
+	max-width: 68ch;
 }
 
+/* vertical rhythm — each section contributes one space-section step, so no
+   section ever sits flush against a neighbour. An alternating band carries
+   its own internal padding; a section that follows a band gets the same
+   standard margin as any other, keeping the band's spacing symmetric. */
 .section {
-	padding-block: var(--space-section);
+	margin-block-start: var(--space-section);
 }
-
-.section-tight {
-	padding-block: calc(var(--space-section) / 2);
-}
-
 .section-alt {
 	background: var(--paper-deep);
 	border-block: 1px solid var(--line);
-}
-
-.prose {
-	max-width: 68ch;
+	padding-block: var(--space-section);
 }
 
 .lead {
@@ -470,7 +482,7 @@ em {
 	align-items: center;
 }
 
-.hero h1 .em {
+h1 .em {
 	font-style: italic;
 	font-weight: 500;
 	color: var(--ink);
@@ -549,7 +561,7 @@ em {
 	-webkit-backdrop-filter: blur(8px);
 	border: 1px solid rgba(255, 255, 255, 0.5);
 	border-radius: 999px;
-	padding: 0.55rem 1rem;
+	padding: 0.5rem 1rem;
 	font-size: 0.85rem;
 	font-weight: 700;
 	color: var(--ink);
@@ -596,6 +608,10 @@ em {
 	gap: clamp(2rem, 5vw, 4.5rem);
 	align-items: start;
 }
+.split.split-wide-left {
+	grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+}
+.section h2,
 .split h2 {
 	margin-bottom: 1.4rem;
 }
@@ -630,7 +646,7 @@ em {
 	background: var(--paper-deep);
 	border: 1px solid var(--line-strong);
 	border-radius: 999px;
-	padding: 0.45rem 1.05rem;
+	padding: 0.5rem 1rem;
 	font-size: 0.92rem;
 	font-weight: 500;
 	color: var(--ink);
@@ -770,15 +786,15 @@ em {
 
 /* ---------- trust band ---------- */
 .trust-row {
-  padding: 8px;
-  border-radius: var(--radius-s);
-  background: var(--surface);
+	padding: var(--space-2) var(--space-3);
+	border-radius: var(--radius-s);
+	background: var(--surface);
 	display: flex;
 	flex-wrap: wrap;
-  max-width: fit-content;
+	max-width: fit-content;
 	align-items: center;
 	gap: 1.5rem 2rem;
-	margin-top: 1.6rem;
+	margin-top: var(--space-6);
 	color: var(--ink-soft);
 	font-size: 0.95rem;
 }
@@ -825,7 +841,7 @@ em {
 .site-footer {
 	background: var(--ink);
 	color: var(--on-dark-text);
-	margin-top: clamp(4rem, 9vw, 7rem);
+	margin-top: clamp(3rem, 6vw, 5rem);
 	padding-block: 3.75rem 2.25rem;
 }
 .footer-grid {
@@ -940,7 +956,7 @@ em {
 	display: block;
 	font-weight: 700;
 	font-size: 0.92rem;
-	margin-bottom: 0.45rem;
+	margin-bottom: 0.5rem;
 }
 .field input,
 .field textarea {

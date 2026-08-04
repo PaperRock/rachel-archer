@@ -1,12 +1,15 @@
 ---
 interface Props {
 	stickyLeft?: boolean;
+	wideLeft?: boolean;
 }
 
-const { stickyLeft = false } = Astro.props;
+const { stickyLeft = false, wideLeft = false } = Astro.props;
+
+const classes = ["split", wideLeft ? "split-wide-left" : ""].filter(Boolean).join(" ");
 ---
 
-<div class="split">
+<div class={classes}>
 	<div class={stickyLeft ? "sticky-side" : undefined}>
 		<slot name="left" />
 	</div>

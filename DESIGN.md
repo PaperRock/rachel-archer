@@ -16,7 +16,7 @@
 | `--surface` | `#ffffff` | cards, panels, inputs |
 | `--ink` | `#141414` | near-black text + primary buttons + dark panels |
 | `--ink-soft` | `#484848` | secondary text (≈8:1 on paper) |
-| `--accent` | `#a7d49b` | lime highlight — hero `<em>` marker, divider seeds, dot separators, form-success border, hover fills (ink ≥11:1) |
+| `--accent` | `#a7d49b` | lime highlight — heading emphasis marker, divider seeds, dot separators, form-success border, hover fills (ink ≥11:1) |
 | `--accent-deep` | `#92ac86` | deep forest — links, focus rings, sticky header band, hero band, button hover fills (ink ≥7:1 on forest) |
 | `--clay` | `#fd5622` | warm note, used only in tiny marks |
 | `--line` | `rgba(20,20,20,0.12)` | hairlines |
@@ -40,10 +40,15 @@
 ### Motion
 One authored moment: a soft page crossfade via Astro View Transitions, with header/footer persisted. Plus gentle hover lifts on buttons, a slow image scale on the hero photo, and underline reveals in the nav. Everything honors `prefers-reduced-motion`.
 
+### Spacing
+Quarter-rem scale, 4px steps at 16px: `--space-1` 0.25rem … `--space-14` 4rem, plus `--space-section` for the page rhythm and `--gutter` for horizontal page padding. Content margins use the scale (mdx heading/intro gaps use `var(--space-3)` / `var(--space-9)`).
+
 ## Layout
 
 - Max width `1140px`, gutter `clamp(1.25rem, 4vw, 2.5rem)`, section rhythm `clamp(4.5rem, 10vw, 8rem)`.
-- `.split` two-column for interior prose pages (photo/heading left, prose right); collapses below 820px. Sticky photo rail on Approach.
+- Sections contribute a single rhythm step: every `.section` starts with `margin-block-start: var(--space-section)`. Alternating bands (`.section-alt`) carry their own internal padding; a section that follows a band keeps the same standard margin as any other, so its content never touches the band's border and the band's spacing stays symmetric.
+- Headings open blocks with `margin-bottom: 1.4rem`; a heading followed by an intro line drops to `var(--space-3)` and the intro leads with `var(--space-9)`.
+- `.split` two-column for interior prose pages (photo/heading left, prose right); collapses below 820px. Sticky photo rail on Approach. The heavier column takes the wider slot — use `<Split wideLeft>` when the form or prose leads (contact).
 - Hero: full-bleed deep-forest band; two-column grid (copy left, portrait right with a location tag); single column on mobile, photo below copy.
 - Editorial rhythm: generous whitespace, more space above a heading than below; prose sections over icon-card grids.
 
