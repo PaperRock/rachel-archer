@@ -5,12 +5,15 @@ interface Props {
 	title: string;
 	href: string;
 	label: string;
+	image: string;
+	imageAlt: string;
 }
 
-const { title, href, label } = Astro.props;
+const { title, href, label, image, imageAlt } = Astro.props;
 ---
 
 <article class="path">
+	<img class="path-media" src={image} alt={imageAlt} loading="lazy" />
 	<h3>{title}</h3>
 	<slot />
 	<TextLink href={href} label={label} />

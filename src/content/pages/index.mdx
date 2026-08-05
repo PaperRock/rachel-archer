@@ -27,12 +27,7 @@ import PathCard from "../../components/PathCard.astro";
 <Section>
   <Split>
     <div slot="left">
-      <span class="divider-seed" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2.5c5 3.2 7.5 7.4 7.5 12.6a7.5 7.5 0 0 1-15 0C4.5 9.9 7 5.7 12 2.5Z" fill="currentColor" />
-        </svg>
-      </span>
-      <p class="lead">“Establishing a genuine connection is at the heart of my counselling practice, helping my clients to feel at ease to share what is troubling them — face to face or online.”</p>
+      <p class="lead"><span class="quote quote-open" aria-hidden="true">“</span>Establishing a genuine connection is at the heart of my counselling practice, helping my clients to feel at ease to share what is troubling them — face to face or online.<span class="quote quote-close" aria-hidden="true">”</span></p>
     </div>
     <div slot="right">
       <p>Many people reach a point in their lives where old habits of managing thoughts and feelings no longer work. We are mistakenly led to believe that a frenzy of activity will quiet our unrest. Beneath it lies a range of psychological challenges that counselling can help with.</p>
@@ -49,10 +44,10 @@ import PathCard from "../../components/PathCard.astro";
   <h2 style="max-width: 22ch; margin-bottom: var(--space-3)">Two ways to work together</h2>
   <p class="text-soft" style="max-width: 52ch; margin-bottom: var(--space-9)">Counselling happens in person at my practice in Maidstone, or online wherever you are. Both are built around you.</p>
   <div class="paths">
-    <PathCard title="Counselling in Maidstone" href="/about-therapy" label="About counselling">
+    <PathCard title="Counselling in Maidstone" href="/about-therapy" label="About counselling" image="/images/in-person.png" imageAlt="A calm counselling room in Maidstone">
       A calm, safe space in Loose, Maidstone where we meet face to face for an hour each week, working at your pace.
     </PathCard>
-    <PathCard title="Online video & phone counselling" href="/online-counselling" label="Online counselling">
+    <PathCard title="Online video & phone counselling" href="/online-counselling" label="Online counselling" image="/images/online.png" imageAlt="An online video counselling call">
       From the comfort of your own home, over the phone, Skype, FaceTime or WhatsApp — for anyone who can’t get to Maidstone.
     </PathCard>
   </div>
