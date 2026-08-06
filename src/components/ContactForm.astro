@@ -16,30 +16,9 @@ import { site } from "../data/site";
 		</div>
 
 		<div class="field">
-			<label for="cf-phone">Phone Number</label>
-			<input id="cf-phone" name="phone" type="tel" autocomplete="tel" />
-		</div>
-
-		<div class="field">
 			<label for="cf-message">Message</label>
 			<textarea id="cf-message" name="message" rows="5" required></textarea>
 		</div>
-
-		<fieldset class="field">
-			<legend style="display: block; font-weight: 700; font-size: 0.92rem; margin-bottom: 0.45rem">
-				How should I get back to you?
-			</legend>
-			<div class="radio-group">
-				<label>
-					<input type="radio" name="preferred" value="Email" checked />
-					Email
-				</label>
-				<label>
-					<input type="radio" name="preferred" value="Phone" />
-					Phone
-				</label>
-			</div>
-		</fieldset>
 
 		<div>
 			<button class="btn btn-primary" type="submit">Send my message</button>
@@ -73,12 +52,9 @@ import { site } from "../data/site";
 			e.preventDefault();
 			const data = new FormData(form);
 			const subject = `Counselling enquiry from ${data.get("name") || "a visitor"}`;
-			const preferred = data.get("preferred") || "Email";
 			const body = [
 				`Name: ${data.get("name") || ""}`,
 				`Email: ${data.get("email") || ""}`,
-				`Phone: ${data.get("phone") || "—"}`,
-				`Preferred contact: ${preferred}`,
 				``,
 				`Message:`,
 				`${data.get("message") || ""}`,

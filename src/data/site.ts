@@ -4,16 +4,12 @@ export const site = {
 	subtagline: "In-Person and Online Video Counselling",
 	description:
 		"Feeling stuck, anxious or experiencing relationship problems - I can help.",
-	phoneDisplay: "07915 101 997",
-	phoneTel: "+447915101997",
 	email: "rachelarchertherapy@gmail.com",
 	privacyPolicy: "/privacy-policy",
 	address: {
-		line1: "Anglesey Avenue",
-		line2: "Loose, Maidstone",
-		postcode: "ME15 6DX",
+		line: "Loose, Maidstone",
 	},
-	addressLine: "Loose, Anglesey Avenue, Maidstone",
+	addressLine: "Loose, Maidstone",
 	fee: "£55",
 	feeDetail: "per 1-hour session",
 	feeNote:

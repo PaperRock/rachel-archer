@@ -28,8 +28,7 @@ import Icon from "./Icon.astro";
 			<div class="footer-col">
 				<h4>Practice</h4>
 				<ul>
-					<li>{site.address.line1}</li>
-					<li>{site.address.line2}, {site.address.postcode}</li>
+					<li>{site.address.line}</li>
 					<li>United Kingdom</li>
 				</ul>
 			</div>
@@ -37,7 +36,6 @@ import Icon from "./Icon.astro";
 			<div class="footer-col">
 				<h4>Contact</h4>
 				<ul>
-					<li><a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a></li>
 					<li><a href={`mailto:${site.email}`}>{site.email}</a></li>
 				</ul>
 			</div>
