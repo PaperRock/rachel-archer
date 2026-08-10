@@ -12,6 +12,6 @@ const { title, lead } = Astro.props;
 <section class="page-hero">
 	<div class="container">
 		<h1 set:html={emphasizeTitle(title)} />
-		{lead && <p class="lead page-lead">{lead}</p>}
+		{lead && <p class="lead page-lead" set:html={emphasizeTitle(lead)} />}
 	</div>
 </section>

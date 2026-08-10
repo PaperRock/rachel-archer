@@ -29,13 +29,29 @@ import { site } from "../../data/site";
         <p>I have completed in-depth training in humanistic and integrative therapy and attend regular training. I am an IFS-informed therapist who uses parts work to help understand more of our internal system.</p>
       </Prose>
       <div class="trust-row">
-        <span>{site.bacp.label}.</span>
-        <span>{site.bacp.framework}</span>
+        <span class="trust-note">
+          <span>{site.bacp.label}.</span>
+          <span>{site.bacp.framework}</span>
+        </span>
+        <a
+          class="bacp-mark"
+          href={site.bacp.url}
+          target="_blank"
+          rel="noopener"
+          aria-label="Visit the BACP website"
+        >
+          <img
+            src="/images/bacp-logo.png"
+            alt="BACP — British Association for Counselling and Psychotherapy"
+            width="208"
+            height="92"
+          />
+        </a>
       </div>
     </div>
     <div slot="right">
       <Figure
-        src="/images/practice-room.jpg"
+        src="/images/practice-room.png"
         alt="The counselling practice in Loose, Maidstone"
         width={1200}
         height={900}

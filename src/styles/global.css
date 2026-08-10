@@ -482,7 +482,8 @@ em {
 	align-items: center;
 }
 
-h1 .em {
+h1 .em,
+.page-lead .em {
 	font-style: italic;
 	font-weight: 500;
 	color: var(--ink);
@@ -813,6 +814,12 @@ h1 .em {
 .bacp-mark img {
 	height: 56px;
 	width: auto;
+}
+.trust-note {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	column-gap: 0.5rem;
 }
 
 /* ---------- CTA band ---------- */
