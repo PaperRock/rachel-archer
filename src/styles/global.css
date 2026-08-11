@@ -170,6 +170,17 @@ em {
 .prose {
 	max-width: 68ch;
 }
+.prose ul {
+	margin: 0 0 1.2em;
+	padding-left: 1.4em;
+	list-style: disc;
+}
+.prose li {
+	margin-bottom: 0.6em;
+}
+.prose li:last-child {
+	margin-bottom: 0;
+}
 
 /* vertical rhythm — each section contributes one space-section step, so no
    section ever sits flush against a neighbour. An alternating band carries
