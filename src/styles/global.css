@@ -847,8 +847,18 @@ h1 .em,
 
 /* ---------- CTA band ---------- */
 .cta-band {
+	position: relative;
 	border-radius: var(--radius-l);
-	background: var(--ink);
+	background: linear-gradient(
+		-45deg,
+		var(--ink) 0%,
+		color-mix(in srgb, var(--paper) 10%, var(--ink)) 20%,
+		color-mix(in srgb, var(--accent) 20%, var(--ink)) 50%,
+		color-mix(in srgb, var(--paper) 10%, var(--ink)) 80%,
+		var(--ink) 100%
+	);
+	background-size: 400% 400%;
+	animation: cta-drift 28s ease-in-out infinite;
 	color: var(--paper);
 	padding: clamp(2.5rem, 6vw, 4rem);
 	display: flex;
@@ -857,6 +867,21 @@ h1 .em,
 	justify-content: space-between;
 	gap: 2rem;
 	box-shadow: var(--shadow-soft);
+}
+.cta-band.is-paused {
+	animation-play-state: paused;
+}
+
+@keyframes cta-drift {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 .cta-band h2 {
 	color: var(--paper);

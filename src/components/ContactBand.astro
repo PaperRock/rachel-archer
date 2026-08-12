@@ -29,3 +29,19 @@ const {
 		</div>
 	</div>
 </Section>
+
+<script>
+	const bands = Array.from(document.querySelectorAll(".cta-band"));
+
+	if (bands.length && "IntersectionObserver" in window) {
+		const io = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					entry.target.classList.toggle("is-paused", !entry.isIntersecting);
+				});
+			},
+			{ rootMargin: "200px" },
+		);
+		bands.forEach((band) => io.observe(band));
+	}
+</script>

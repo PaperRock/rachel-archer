@@ -38,7 +38,7 @@
 - Shadows carry offset + blur: `--shadow-soft` (0 26px 60px −28px), `--shadow-card` (0 18px 44px −26px). No hard offset blocks.
 
 ### Motion
-One authored moment: a soft page crossfade via Astro View Transitions, with header/footer persisted. Plus gentle hover lifts on buttons, a slow image scale on the hero photo, and underline reveals in the nav. Everything honors `prefers-reduced-motion`.
+One authored moment: a soft page crossfade via Astro View Transitions, with header/footer persisted. The CTA band carries a slow, near-imperceptible gradient drift — a "living ember" sweeping espresso through muted forest, sage, and warm-soil sub-tones of the palette (28s ease-in-out) that reads as depth, not motion; it pauses offscreen via IntersectionObserver. Plus gentle hover lifts on buttons, a slow image scale on the hero photo, and underline reveals in the nav. Everything honors `prefers-reduced-motion`.
 
 ### Spacing
 Quarter-rem scale, 4px steps at 16px: `--space-1` 0.25rem … `--space-14` 4rem, plus `--space-section` for the page rhythm and `--gutter` for horizontal page padding. Content margins use the scale (mdx heading/intro gaps use `var(--space-3)` / `var(--space-9)`).
@@ -57,7 +57,7 @@ Quarter-rem scale, 4px steps at 16px: `--space-1` 0.25rem … `--space-14` 4rem,
 - **Header**: sticky, translucent deep-forest band with backdrop blur; serif wordmark + tracked sub-line; desktop underline nav; pill CTA "Let's talk about it"; mobile hamburger → full-height menu under the header bar with big serif links, contact block, scroll lock.
 - **Footer**: espresso band; brand + practice/contact/professional columns; social round icons; BACP badge linking out; dynamic copyright year.
 - **Buttons**: pill; primary near-black, ghost with control-border, on-dark variants; deep-forest hover fill with ink text; 1px lift on hover.
-- **CTA band**: near-black rounded panel, heading + reassurance line, contact actions.
+- **CTA band**: near-black rounded panel with a slow animated gradient drift, heading + reassurance line, contact actions.
 - **Issues chips**: surface pills enumerating presenting issues (content, non-interactive).
 - **FAQ**: surface panels, one open question + an invitation to ask more.
 - **Fee panel**: big serif fee, reduced-fee note, contact details, BACP badge.
