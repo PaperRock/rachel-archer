@@ -407,15 +407,27 @@ em {
 .nav-toggle {
 	display: none;
 	margin-inline-start: auto;
-	background: color-mix(in srgb, var(--paper) 92%, transparent);
-	border: 1px solid var(--control-border);
-	border-radius: var(--radius-s);
+	background: var(--ink);
+	color: var(--paper);
+	border: 1px solid transparent;
+	border-radius: 999px;
 	width: 44px;
 	height: 44px;
 	cursor: pointer;
-	color: var(--ink);
 	align-items: center;
 	justify-content: center;
+	transition:
+		transform 0.18s var(--ease),
+		background-color 0.18s var(--ease),
+		color 0.18s var(--ease);
+}
+.nav-toggle:hover {
+	background: var(--accent-deep);
+	color: var(--ink);
+	transform: translateY(-1px);
+}
+.nav-toggle:active {
+	transform: translateY(0);
 }
 .nav-toggle svg {
 	display: block;
@@ -469,7 +481,7 @@ em {
 	align-self: flex-start;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1012px) {
 	.nav {
 		display: none;
 	}
